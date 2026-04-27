@@ -10,6 +10,10 @@ window.addEventListener('load', () =>
         return;
     }
 
+	window.parent.postMessage({
+		action: 'SCAN_LOADED'
+	}, '*');
+
 	//console.log(ZXing.BarcodeFormat.CODE_39);
 
 	setGlobalCallbacks();
@@ -31,7 +35,10 @@ function setGlobalCallbacks ()
 
 	window.funcPromptOptionYes = (value) => {
 
-		alert(`Confirmed code: ${value}`);
+		window.parent.postMessage({
+			action: 'SCAN_RESULT',
+			value: value
+		}, '*');
 	};
 
 	window.funcPromptOptionNo = (value) => {
