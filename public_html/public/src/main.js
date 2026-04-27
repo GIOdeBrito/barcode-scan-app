@@ -22,7 +22,7 @@ function getScanReaders ()
     const urlParams = new URLSearchParams(search);
 
     // Scan type. Code-39, EAN, etc.
-	const type = urlParams.get('scan') ?? 'EAN';
+	const type = (urlParams.get('scan') ?? 'ean').toLowerCase();
 
     window['code-type-paragraph'].innerText = type.toUpperCase();
 
