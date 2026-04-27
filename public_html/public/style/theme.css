@@ -19,7 +19,6 @@ body {
     height: 100vh;
     position: relative;
     margin: auto;
-    /*border-style: dashed;*/
     border: none;
 }
 
@@ -94,5 +93,6 @@ dialog button:hover {
 }
 
 dialog button[name="no"] {
-    background-color: #ff7a7a;
+	background-color: #6c6c6c;
+	color: #fff;
 }

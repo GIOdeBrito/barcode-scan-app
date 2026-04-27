@@ -9,3 +9,15 @@ services:
         ports:
             - "3300:80"
         tty: true
+
+    bundler-dev:
+        container_name: web-scanner-webpack-bundler-dev
+        build:
+            context: ./webpack-bundler
+            dockerfile: Dockerfile
+        volumes:
+            - ./private/js-source:/app/sourcejs
+            - ./public_html/public/dist:/app/outdir
+            - ./webpack-bundler/webpack.config.js:/app/webpack.config.js
+        working_dir: /app
+        command: npm run dev
