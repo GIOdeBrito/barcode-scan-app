@@ -28,7 +28,7 @@ export default class {
 
 	            if(result)
 	            {
-	                if(formats.includes(result.getBarcodeFormat()))
+					if(this.#formats.includes(result.getBarcodeFormat()))
 	                {
 	                    console.log('Found code:', result.text);
 						window.funcOnCodeFound(result.text);
