@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Web Scanner</title>
+		<script src="./public/src/main.js?v=1"></script>
+		<script src="./public/lib/zxing.js?v=1"></script>
+		<link rel="stylesheet" href="./public/style/master.css?v=1">
+    </head>
+
+    <body>
+        <div class="div-head">
+            <!-- Code reader name -->
+            <p id="code-type-paragraph" style="font-size: 1.5rem"></p>
+        </div>
+
+        <p class="p-hint">Point the camera towards a code to read it</p>
+
+        <div id="scanner-container">
+            <video id="video-output" width="300" height="200" muted playsinline></video>
+        </div>
+
+        <div class="modal-background closed">
+            <dialog data-name="modal">
+                <p></p>
+                <button name="yes">Sim</button>
+                <button name="no">Cancelar</button>
+            </dialog>
+        </div>
+    </body>
+</html>

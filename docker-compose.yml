@@ -1,0 +1,11 @@
+services:
+    scan-dev:
+        container_name: web-scanner-dev
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - "./public_html:/var/www/html"
+        ports:
+            - "3300:80"
+        tty: true
