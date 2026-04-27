@@ -14,8 +14,6 @@ window.addEventListener('load', () =>
 		action: 'SCAN_LOADED'
 	}, '*');
 
-	//console.log(ZXing.BarcodeFormat.CODE_39);
-
 	setGlobalCallbacks();
 
 	const scanType = getURLScannerOption();
@@ -30,7 +28,7 @@ function setGlobalCallbacks ()
 {
 	window.funcOnCodeFound = (result) => {
 
-		promptConfirm(`Confirm code: ${result}?`);
+		promptConfirm(`Confirm code: ${result}?`, result);
 	};
 
 	window.funcPromptOptionYes = (value) => {
